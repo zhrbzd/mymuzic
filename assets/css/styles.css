@@ -31,17 +31,6 @@ header a {
 }
 header a:hover {color: #636363;}
 header .text img {width: 10%}
-.sign-in, .sign-sign, .sign-up {
-    font-size: 11px;
-    font-family: cursive;
-    position: absolute;
-    top: 20pt;
-}
-.sign-in {left: 106pt;}
-.sign-sign {
-    left: 142pt;
-}
-.sign-up {left: 151pt;}
 
 .playing {
     display: flex;
@@ -61,6 +50,18 @@ header .text img {width: 10%}
 }
 .playing img {width: 100%;}
 .playing:first-child img, .playing:last-child img {width: 58%;}
+
+.sign-in, .sign-sign, .sign-up {
+    font-size: 11px;
+    font-family: cursive;
+    position: absolute;
+    top: 4px;
+}
+.sign-in {left: 15%;}
+.sign-sign {
+    left: 21%;
+}
+.sign-up {left: 23%;}
 
 .muzic-list {
     display: flex;
