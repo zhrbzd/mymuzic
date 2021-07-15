@@ -12,24 +12,28 @@
 }
 ::-webkit-scrollbar {
     width: 6px;
-    background: rgb(232, 232, 232);
+    background: var(--lightwhite);
 }
-::-webkit-scrollbar-track {
-    background: transparent;
-}
+::-webkit-scrollbar-track {background: transparent;}
 ::-webkit-scrollbar-thumb {
-    background: #B8B8B8;
+    background: var(--darkwhite);
     border-radius: 8px;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: #514740;
-}
+::-webkit-scrollbar-thumb:hover {background: var(--brown);}
 
 @keyframes upDown {
-    50% {top: 70px;}
-    100% {top: 44px;}
+    50% {top: 46px;}
+    100% {top: 26px;}
 }
-:root {--darkgray: #5e5e5e;}
+:root {
+    --lightwhite: #e8e8e8;
+    --darkwhite: #B8B8B8;
+    --lightgrey: #b8b8b8;
+    --grey: #636363;
+    --darkgrey: #5e5e5e;
+    --darkergrey: #2c2c2c;
+    --brown: #514740;
+}
 
 body {
     box-sizing: border-box;
@@ -38,11 +42,11 @@ body {
 }
 body a {text-decoration: none;}
 #headphone {
-    top: 44px;
+    top: 26px;
     position: absolute;
-    width: 38%;
+    width: 25%;
     height: auto;
-    right: 120px;
+    right: 216px;
     animation-name: upDown;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -54,14 +58,14 @@ body a {text-decoration: none;}
 header {position: relative;}
 header a {
     font-family: marcellusSC;
-    font-size: 36px;
+    font-size: 48px;
     position: absolute;
     top: 15%;
-    left: 15%;
-    color: #2c2c2c;
+    left: 22%;
+    color: var(--darkergrey);
 }
-header a:hover {color: #636363;}
-header .text img {width: 10%}
+.text:hover {color: var(--grey);}
+.text {color: var(--darkergrey)}
 
 .playing {
     display: flex;
@@ -89,24 +93,23 @@ header .text img {width: 10%}
     top: 16px;
 }
 .sign-in {left: 15%;}
-.sign-sign {
-    left: 19%;
-}
+.sign-sign {left: 19%;}
 .sign-up {left: 20%;}
-
+.sign-in:hover,
+.sign-up:hover {
+    color: var(--darkgrey);
+}
 .muzic-list {
     display: flex;
     flex-direction: column;
     align-content: center;
     text-align: center;
     line-height: 40%;
-    margin-top: 80px;
     position: relative;
     max-height: 56vh;
     overflow-y: scroll;
     width: 80vw;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 80px auto;
 }
 .muzic-list .one a,
 .muzic-list .two a,
@@ -119,83 +122,21 @@ header .text img {width: 10%}
 }
 .muzic-list .one a {
     top: 7%;
-    color: #b8b8b8;
+    color: var(--lightgrey);
 }
 .muzic-list .two a {
-    color: var(--darkgray);
+    color: var(--darkgrey);
     top: 30%;
 }
 .muzic-list .three a {
-    color: var(--darkgray);
+    color: var(--darkgrey);
     top: 57%;
 }
 .muzic-list .four a {
-    color: var(--darkgray);
+    color: var(--darkgrey);
     top: 81%;
 }
-
-footer {
-    margin-top: 60px;
-    position: relative;
-}
-.mymuzic-telegram, .mymuzic-instagram {text-align: center;}
-.mymuzic-telegram img, .mymuzic-instagram img,
-.mymuzic-whatsapp img, .mymuzic-app img {
-    width: 25px;
-    margin-right: 4px;
-    vertical-align: middle;
-}
-footer .footer-bg {width: 100%;}
-.withus {
-    position: absolute;
-    bottom: 23%;
-    left: 0;
-    right: 0;
-}
-footer .mymuzic-telegram a {
-    color: #77aede;
-    font-family: RussoOne;
-    font-size: 18px;
-    margin-right: 10px;
-}
-footer .mymuzic-instagram a {
-    color: #f3ff8b;
-    font-family: RussoOne;
-    font-size: 18px;
-    margin-right: 10px;
-}
-footer .mymuzic-whatsapp a {
-    color: #ffffff;
-    font-family: RussoOne;
-    font-size: 18px;
-    margin-right: 10px;
-}
-footer .mymuzic-app a {
-    color: #f3ff8b;
-    font-family: RussoOne;
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-@media only screen and (min-width: 993px) {
-    header a {font-size: 72px;}
-}
-@media (min-width: 577) and (max-width: 992px) {
-    header a {font-size: 52px;}
-    .muzic-list img {width: 50%;}
-    footer .mymuzic-telegram a,
-    footer .mymuzic-instagram a,
-    footer .mymuzic-whatsapp a,
-    footer .mymuzic-app a {font-size: 10px;}
-    
-    footer .mymuzic-telegram img,
-    footer .mymuzic-instagram img,
-    footer .mymuzic-whatsapp img,
-    footer .mymuzic-app img {width: 122px;}
-}
-@media only screen and (min-width: 576px) {
-    .muzic-list img {width: 50%;}
-}
+@media only screen and (min-width: 576px) {.muzic-list img {width: 50%;}}
 @media only screen and (max-width: 576px) {
     header .text {font-size: 10px;}
     header .text img {width: 3%;}
@@ -204,17 +145,6 @@ footer .mymuzic-app a {
         height: 100%;
         font-size: 60%;
     }
-    footer .mymuzic-telegram a,
-    footer .mymuzic-instagram a,
-    footer .mymuzic-whatsapp a,
-    footer .mymuzic-app a {font-size: 10px;}
-    
-    footer .mymuzic-telegram img,
-    footer .mymuzic-instagram img,
-    footer .mymuzic-whatsapp img,
-    footer .mymuzic-app img {width: 14px;}
-
-    footer .withus {bottom: 5%;}
 }
 
 /*
